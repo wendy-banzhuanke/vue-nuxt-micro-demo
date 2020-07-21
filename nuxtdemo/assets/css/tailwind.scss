@@ -1,0 +1,31 @@
+// @tailwind base;
+// @tailwind utilities;
+
+// body {
+//   min-height: 100%;
+//   background-color: #f5f5f5;
+// }
+
+// .ej-layout-body {
+//   @apply mx-auto flex flex-auto w-full;
+// }
+
+// .el-loading-mask {
+//   svg {
+//     @apply inline;
+//   }
+// }
+
+@tailwind base;
+
+html, body {
+  @apply h-screen font-sans antialiased;
+
+  font-size: 14px;
+}
+
+svg {
+  @apply fill-current;
+}
+
+@tailwind utilities;

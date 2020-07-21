@@ -1,0 +1,31 @@
+@tailwind base;
+
+html, body {
+  @apply font-sans antialiased;
+
+  min-height: 100vh;
+  font-size: 14px;
+}
+
+em {
+  // 中文世界并不常用斜体，因此默认取消斜体样式
+  font-style: normal;
+}
+
+svg, img {
+  // Tailwind Preflight 设定了默认 block，破坏了许多地方的布局，暂时控制一下
+  // FIXME: temporary workaround
+  display: inline-block !important;
+}
+
+svg {
+  @apply fill-current;
+}
+
+button {
+  outline: none !important;
+}
+
+@tailwind components;
+
+@tailwind utilities;

@@ -14,6 +14,10 @@
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
+    "postcss-easings": "^2.0.0",
     "@femessage/nuxt-micro-frontend": "^1.3.0"
-  }
+  },
+  "workspaces": [
+    "externals/*"
+  ]
 }

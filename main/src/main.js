@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import App from './App'
+import 'element-ui/lib/theme-chalk/index.css'
+import '@/assets/css/common.scss'
 Vue.config.productionTip = false
 
 // 导入qiankun内置函数
@@ -101,3 +103,17 @@ start();
 // new Vue({
 //   render: h => h(App),
 // }).$mount('#app')
+
+let arr = [1, 2, 3]
+
+function test () {
+  arr.forEach(e => {
+    if (e > 1) {
+      console.log(e, "大于1")
+      return false
+    }
+  })
+}
+
+let result = test()
+console.log(result)

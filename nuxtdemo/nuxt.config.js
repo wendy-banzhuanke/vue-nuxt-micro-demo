@@ -51,6 +51,13 @@ export default {
     // Simple usage
     '@femessage/nuxt-micro-frontend',
   ],
+  tailwindcss: {
+    configPath: resolve(__dirname, './tailwind.config.js'),
+    cssPath: '~/assets/css/tailwind.scss',
+  },
+  purgeCSS: {
+    enabled: false,
+  },
   /*
   ** Build configuration
   */

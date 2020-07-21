@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './App.vue';
+import routers from './router'
 // import './public-path';
 
 Vue.config.productionTip = false;
@@ -12,6 +13,7 @@ function render() {
     router = new VueRouter({
         base: window.__POWERED_BY_QIANKUN__ ? '/seamodule' : '/',
         mode: 'history',
+        router: routers,
     });
 
     instance = new Vue({
