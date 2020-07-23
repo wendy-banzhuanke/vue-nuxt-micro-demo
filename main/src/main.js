@@ -92,28 +92,10 @@ registerMicroApps(
 );
 
 // 设置默认子应用,参数与注册子应用时genActiveRule("/aaa")函数内的参数一致
-setDefaultMountApp('/nuxt');
+setDefaultMountApp('/nuxt/');
 
 // 第一个子应用加载完毕回调
 runAfterFirstMounted(() => {});
 
 // 启动微服务
 start();
-
-// new Vue({
-//   render: h => h(App),
-// }).$mount('#app')
-
-let arr = [1, 2, 3]
-
-function test () {
-  arr.forEach(e => {
-    if (e > 1) {
-      console.log(e, "大于1")
-      return false
-    }
-  })
-}
-
-let result = test()
-console.log(result)

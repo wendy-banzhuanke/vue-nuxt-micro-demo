@@ -1,13 +1,16 @@
 <template>
   <div id="index">
-    
+    dddd
+    <show-block/>
   </div>
 </template>
 
 <script>
+import ShowBlock from '@/components/show-block'
 export default {
   name: 'Index',
   components: {
+    ShowBlock,
   }
 }
 </script>

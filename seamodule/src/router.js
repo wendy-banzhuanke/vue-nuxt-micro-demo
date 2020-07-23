@@ -1,19 +1,22 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Index from '@/views/index.vue'
+import Test from '@/views/test.vue'
 
 Vue.use(Router)
 
 const router = new Router({
   mode: 'history',
+  base: window.__POWERED_BY_QIANKUN__ ? '/seamodule' : '/',
   linkActiveClass: 'active',
   routes: [
     {
       path: '/',
-      component: () => import('@/views/index.vue'),
+      component: Index,
     },
     {
       path: '/test',
-      component: () => import('@/views/test.vue'),
+      component: Test,
     },
   ],
 })
