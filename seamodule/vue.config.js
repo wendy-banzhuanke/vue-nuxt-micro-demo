@@ -8,13 +8,6 @@ function resolve(dir) {
 const port = 7091; // dev port
 
 module.exports = {
-  /**
-   * You will need to set publicPath if you plan to deploy your site under a sub path,
-   * for example GitHub Pages. If you plan to deploy your site to https://foo.github.io/bar/,
-   * then publicPath should be set to "/bar/".
-   * In most cases please use '/' !!!
-   * Detail: https://cli.vuejs.org/config/#publicpath
-   */
     // publicPath: `//localhost:${port}`,
     // output: {
     //     publicPath: '/'
@@ -42,6 +35,7 @@ module.exports = {
         resolve: {
             alias: {
                 '@': resolve('src'),
+                '@vue/composition-api': path.resolve(path.join(__dirname, './node_modules/@vue/composition-api/')),
             },
         },
         output: {
@@ -50,5 +44,11 @@ module.exports = {
             libraryTarget: 'umd',
             jsonpFunction: `webpackJsonp_${name}`,
         },
-    },
+    }
+    // ,
+    // chainWebpack: config => {
+    //     config.merge({
+    //         externals: ['vue', '@vue/composition-api'],
+    //     })
+    // },
 };

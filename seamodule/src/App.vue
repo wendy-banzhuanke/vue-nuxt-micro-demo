@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    eeee
     <router-view/>
   </div>
 </template>
@@ -10,4 +9,10 @@ export default {
   name: 'App',
 }
 </script>
+
+<style lang="scss">
+  #app {
+    @apply p-5;
+  }
+</style>
 
