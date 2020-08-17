@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/views/index.vue'
+import EgMonaco from '@/views/eg-monaco'
 import Test from '@/views/test.vue'
 
 Vue.use(Router)
@@ -13,6 +14,11 @@ const router = new Router({
     {
       path: '/',
       component: Index,
+    },
+    {
+      path: '/monaco',
+      name: 'eg-monaco',
+      component: EgMonaco,
     },
     {
       path: '/test',

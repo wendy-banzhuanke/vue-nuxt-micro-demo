@@ -12,7 +12,7 @@ export default {
 
 <style lang="scss">
   #app {
-    @apply p-5;
+    @apply p-5 flex flex-col h-full;
   }
 </style>
 

@@ -1,6 +1,8 @@
 <template>
   <div class="show-block-class">
-    <div class="publicity-area" :style="{background: 'url(' + dynamicBgImg(data.bgImg) + ') no-repeat center'}">
+    <div  @click="$router.push({name: data.router})"
+          class="publicity-area" 
+          :style="{background: 'url(' + dynamicBgImg(data.bgImg) + ') no-repeat center'}">
       <div class="publicity-area__mask"></div>
       <p>{{data.title}}</p>
     </div>
