@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <template v-if="$route.name !== 'seamodel-index'">
+      <router-link :to="{path: '/'}" style="color: #525252">&lt;&lt;&nbsp;返回主页</router-link>
+    </template>
     <router-view/>
   </div>
 </template>

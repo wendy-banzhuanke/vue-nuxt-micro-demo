@@ -8,7 +8,7 @@ function resolve(dir) {
 const port = 7091; // dev port
 
 module.exports = {
-    // publicPath: `//localhost:${port}`,
+    publicPath: `//localhost:${port}`,
     // output: {
     //     publicPath: '/'
     // },

@@ -13,6 +13,7 @@ const router = new Router({
   routes: [
     {
       path: '/',
+      name: 'seamodel-index',
       component: Index,
     },
     {

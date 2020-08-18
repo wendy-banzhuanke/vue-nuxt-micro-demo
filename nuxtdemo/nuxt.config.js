@@ -1,4 +1,5 @@
 const { resolve } = require('path')
+const port = 7092
 
 export default {
   mode: 'spa',
@@ -65,7 +66,9 @@ export default {
     /*
     ** You can extend webpack config here
     */
+    publicPath: `//localhost:${port}`,
     devMiddleware: {
+      port,
       headers: {
         'Access-Control-Allow-Origin': '*',
       },

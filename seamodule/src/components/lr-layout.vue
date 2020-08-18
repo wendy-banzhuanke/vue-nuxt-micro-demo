@@ -1,11 +1,10 @@
 <template>
   <div class="lr-layout-comp">
     <div class="left">
-      <!-- <slot name="left" /> -->
-      <div class="menu">test-one.sql</div>
-      <div class="menu">test-two.py</div>
-      <div class="menu">test-two.java</div>
-      <div class="menu">test-two.js</div>
+      <div  v-for="(item, index) in menu" 
+            :key="index"
+            @click="handleMenu(item, index)" 
+            :class="['menu', currentIndex === index ? 'active' : '']">{{item.name}}</div>
     </div>
     <div class="right">
       <slot name="right" />
@@ -14,8 +13,33 @@
 </template>
 
 <script>
+import { reactive, toRefs} from '@vue/composition-api'
 export default {
   name: 'lr-layout',
+
+  props: {
+    menu: {
+      type: Array,
+      default: () => [],
+    },
+  },
+
+  setup (_, {emit}) {
+    const state = reactive({
+      currentIndex: 0,
+    })
+
+    const handleMenu = (item, index) => {
+      // console.log(item, index)
+      emit('click-left', {item, index})
+      state.currentIndex = index
+    }
+
+    return {
+      ...toRefs(state),
+      handleMenu,
+    }
+  },
 }
 </script>
 
@@ -43,6 +67,12 @@ export default {
           border-left-color: #525252;
         }
         &:hover {
+          color: #4499ff;
+          &::before {
+            border-left-color: #4499ff;
+          }
+        }
+        &.active {
           color: #4499ff;
           &::before {
             border-left-color: #4499ff;

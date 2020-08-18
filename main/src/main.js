@@ -67,7 +67,7 @@ registerMicroApps(
     },
     {
       name: 'nuxt', // app name registered
-      entry: '//localhost:3000',
+      entry: '//localhost:7092',
       render,
       activeRule: genActiveRule('/nuxt'),
     },
