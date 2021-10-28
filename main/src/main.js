@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App'
 import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/css/common.scss'
+
 Vue.config.productionTip = false
 
 // 导入qiankun内置函数
@@ -22,8 +23,6 @@ function render({ appContent, loading } = {}) {
   if (!app) {
     app = new Vue({
       el: '#container',
-      // router,
-      // store,
       data() {
         return {
           content: appContent,
@@ -66,10 +65,10 @@ registerMicroApps(
       activeRule: genActiveRule('/seamodule'),
     },
     {
-      name: 'nuxt', // app name registered
+      name: 'lowcode', // app name registered
       entry: '//localhost:7092',
       render,
-      activeRule: genActiveRule('/nuxt'),
+      activeRule: genActiveRule('/lowcode'),
     },
   ],
   {
@@ -92,7 +91,7 @@ registerMicroApps(
 );
 
 // 设置默认子应用,参数与注册子应用时genActiveRule("/aaa")函数内的参数一致
-setDefaultMountApp('/nuxt/');
+setDefaultMountApp('/seamodule/');
 
 // 第一个子应用加载完毕回调
 runAfterFirstMounted(() => {});

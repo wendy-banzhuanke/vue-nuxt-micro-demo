@@ -1,17 +1,22 @@
+<!--
+ * @Author: zhangjian
+ * @Date: 2021-10-27 16:22:55
+ * @LastEditTime: 2021-10-28 14:53:10
+ * @LastEditors: zhangjian
+ * @Description: 描述
+-->
 <template>
-  <el-menu
-    default-active="1"
-    class="el-menu-vertical">
+  <el-menu default-active="1" class="el-menu-vertical">
     <el-menu-item index="1" @click="routerGo('子应用1', '/seamodule')">
       <i class="el-icon-menu"></i>
       <span slot="title">
         Vue子应用
       </span>
     </el-menu-item>
-    <el-menu-item index="2" @click="routerGo('子应用2', '/nuxt')">
+    <el-menu-item index="2" @click="routerGo('子应用2', '/lowcode')">
       <i class="el-icon-document"></i>
       <span slot="title">
-        Nuxt子应用
+        React子应用
       </span>
     </el-menu-item>
     <el-menu-item index="3" @click="routerGo('主应用', '/')">
@@ -22,32 +27,32 @@
 </template>
 
 <script>
-  import {Menu as ElMenu, MenuItem as ElMenuItem} from 'element-ui'
+import { Menu as ElMenu, MenuItem as ElMenuItem } from "element-ui";
 
-  export default {
-    name: 'NavMenu',
+export default {
+  name: "NavMenu",
 
-    components: {
-      ElMenu,
-      ElMenuItem,
+  components: {
+    ElMenu,
+    ElMenuItem,
+  },
+
+  methods: {
+    routerGo(title, route) {
+      console.log("route", route);
+      window.history.pushState({}, title, route);
     },
-
-    methods: {
-      routerGo (title, route) {
-        console.log("route", route)
-        window.history.pushState({}, title, route); 
-      },
-    }
-  }
+  },
+};
 </script>
 
 <style lang="scss">
-  .el-menu-vertical {
-    .el-menu-item {
-      @apply text-lg;
+.el-menu-vertical {
+  .el-menu-item {
+    @apply text-lg;
 
-      height: 40px;
-      line-height: 40px;
-    }
+    height: 40px;
+    line-height: 40px;
   }
+}
 </style>
